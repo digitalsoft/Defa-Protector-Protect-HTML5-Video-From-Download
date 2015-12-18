@@ -2,7 +2,7 @@
 //This version using Ampare Protector Professional Technology. We give it for free to the world that mean I lose a chance of getting 200,000 USD for every download user. Please donate us : http://www.juthawong.com/donate
 ob_start();
 if(session_id() == ''){
-     session_start(); 
+   session_start(); 
 }
 $window = addslashes(strip_tags($_GET['window']));
 $md5defa = md5('Defa');
@@ -13,7 +13,7 @@ $defa = str_replace("https://","http://",base64_decode(base64_decode($filedefa))
 $defaurl = get_headers($file, 1);
 $url = $defaurl["Location"];
 if($url!=$file&&$url!=""){
-$file = $url;
+    $file = $url;
 }
 if (!function_exists('http_response_code'))
 {
@@ -37,29 +37,29 @@ function isMobile() {
 if(isset($_SESSION['jsenable'.$window])){
 	if($header==200&&$header2['Accept']!=""&&$_SESSION['x'.$defa.$t]==0&&isMobile()||isset($_SERVER['HTTP_RANGE'])){
 
-$_SESSION['x'.$defa.$t] = $_SESSION['x'.$defa.$t] + 1;
+        $_SESSION['x'.$defa.$t] = $_SESSION['x'.$defa.$t] + 1;
 //Written By Juthawong Naisanguansee at Ampare Engine
-if(isset($_SERVER['HTTP_RANGE'])){
-$opts['http']['header']="Range: ".$_SERVER['HTTP_RANGE'];
-}
-$opts['http']['method']= "HEAD";
+        if(isset($_SERVER['HTTP_RANGE'])){
+            $opts['http']['header']="Range: ".$_SERVER['HTTP_RANGE'];
+        }
+        $opts['http']['method']= "HEAD";
 
-$conh=stream_context_create($opts);
+        $conh=stream_context_create($opts);
 
-$opts['http']['method']= "GET";
+        $opts['http']['method']= "GET";
 
-$cong= stream_context_create($opts);
+        $cong= stream_context_create($opts);
 
-$out[]= file_get_contents($file,false,$conh);
+        $out[]= file_get_contents($file,false,$conh);
 
-$out[]= $http_response_header;
+        $out[]= $http_response_header;
 
-ob_end_clean();
+        ob_end_clean();
 
-array_map("header",$http_response_header);
+        array_map("header",$http_response_header);
 
-readfile($file,false,$cong);
-die();
-}
+        readfile($file,false,$cong);
+        die();
+    }
 }
 ?>
