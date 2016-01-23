@@ -14,11 +14,16 @@ https://github.com/juthawong/Console-Blocking-For-Defa-Protector
 
 Wordpress upload to wp-content and activated
 
-All CMS
+##All CMS
 
 Put include('includetop.php'); at the most top of the content display page or script.
 
 Put include('includebottom.php'); at the most bottom of the content display page or script.
+
+###ALL CMS Video Tutorial
+https://www.youtube.com/watch?v=2-h_Vs4a-n4
+
+##Wordpress
 
 For Wordpress Plugin and other files : http://sourceforge.net/projects/defaprotecthtml5videodownload/files/?source=navbar
 
